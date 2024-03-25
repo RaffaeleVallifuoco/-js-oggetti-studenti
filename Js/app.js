@@ -1,5 +1,5 @@
 console.log('STUDENTI  -TEST-');
-console.log('');
+console.log(''); //SPAZIO VUOTO
 
 // ARRAY OGGETTI STUDENTI
 
@@ -45,12 +45,12 @@ console.log('Stusenti inseriti nel database : ');
 studentsArray.forEach(function(element, index) {
     console.log(element.studentName , element.studentLast);
 })
-console.log('');
+console.log(''); //SPAZIO VUOTO
 
 // NUOVO STUDENTE
 
-let choice = false;
-choice = confirm('Vuoi inserire un nuovo studente ?');
+// let choice = false;
+const choice = confirm('Vuoi inserire un nuovo studente ?');
 if(choice) {
     console.log('NUOVO STUDENTE : ');
     let studentName = prompt('Inserisci il nome');
@@ -59,10 +59,10 @@ if(choice) {
     console.log(studentName, studentLast, studentAge);
     const newStudent = {studentName, studentLast, studentAge};
     console.log(newStudent);
-    const choice2 = confirm('Sei sicuro di voler inserire lo studente ?')
-    if(choice2) {
+    const choiceConfirm = confirm('Sei sicuro di voler inserire lo studente ?')
+    if(choiceConfirm) {
         studentsArray.push(newStudent);
-        console.log('');
+        console.log(''); //SPAZIO VUOTO
         console.log('Studenti ora presenti nel database :');
         studentsArray.forEach(function (element, index,) {
             console.log(element.studentName, element.studentLast, ', età : ', element.studentAge);
