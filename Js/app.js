@@ -32,7 +32,7 @@ const studentsArray = [
 ]
 
 console.log(studentsArray);
-console.log('Stusenti inseriti nel database : ');
+console.log('Studenti inseriti nel database : ');
 
 // STAMPA NOME COGNOME STUDENTI
 
@@ -53,9 +53,9 @@ console.log(''); //SPAZIO VUOTO
 const choice = confirm('Vuoi inserire un nuovo studente ?');
 if(choice) {
     console.log('NUOVO STUDENTE : ');
-    let studentName = prompt('Inserisci il nome');
-    const studentLast = prompt('Inserisci il cognome');
-    const studentAge = prompt('Inserisci età');
+    let studentName = prompt('Inserisci il nome dello studente');
+    const studentLast = prompt('Inserisci il cognome dello studente');
+    const studentAge = prompt('Inserisci età dello studente');
     console.log(studentName, studentLast, studentAge);
     const newStudent = {studentName, studentLast, studentAge};
     console.log(newStudent);
