@@ -19,6 +19,7 @@
                         class="d-inline-block align-text-center pl-5">
                     Students
                 </a>
+                <button id="filter" type="button" class="btn btn-secondary rounded-pill">Filter by age</button>
             </div>
             </div>
         </nav>
@@ -57,26 +58,27 @@
 
                         <!-- LEFT COL -->
 
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <section>
 
                                 <!-- FORM -->
 
                                 <div class="">
-                                    <form id="add-form" class="border border-primary-subtle rounded">
+                                    <form id="add-form" class="border rounded">
+                                        <h4 class="fw-bold py-4">Aggiungi un nuovo membro</h4>
                                         <div class="mb-3">
                                             <label for="name" class="form-label fw-bold ">Nome</label>
-                                            <input id="name" type="text" class="form-control text-center " placeholder="Inserisci il tuo nome" id="exampleInputEmail1"
+                                            <input id="name" type="text" class="form-control text-center border border-primary-subtle rounded " placeholder="Inserisci il tuo nome" id="exampleInputEmail1"
                                                 aria-describedby="emailHelp">
                                         </div>
                                         <div class="mb-3">
                                             <label for="name" class="form-label fw-bold ">Cognome</label>
-                                            <input id="last" type="text" class="form-control text-center " placeholder="Inserisci il tuo cognome" id="exampleInputEmail1"
+                                            <input id="last" type="text" class="form-control text-center border border-primary-subtle rounded " placeholder="Inserisci il tuo cognome" id="exampleInputEmail1"
                                                 aria-describedby="emailHelp">
                                         </div>
                                         <div class="mb-3">
                                             <label for="name" class="form-label fw-bold ">Età</label>
-                                            <input id="age" type="number" class="form-control text-center " placeholder="Inserisci la tua età" id="exampleInputEmail1"
+                                            <input id="age" type="number" class="form-control text-center border border-primary-subtle rounded " placeholder="Inserisci la tua età" id="exampleInputEmail1"
                                                 aria-describedby="emailHelp">
                                         </div>
                                         <button type="submit" class="btn btn-primary rounded-pill"> Aggiungi memebro al Team </button>
@@ -84,11 +86,10 @@
                                 </div>
                             </section>
                         </div>
+
                         <!-- RIGHT COL -->
                         
-                        <div class="col-md-6">
-                            <button id="filter" type="button" class="btn btn-secondary rounded-pill">Filter by age</button>
-                        </div>
+                        
                         
                     </div>
                 </section>
