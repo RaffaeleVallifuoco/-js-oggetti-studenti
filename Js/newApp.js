@@ -18,6 +18,11 @@ const studentTable = [
         name: 'Gian',
         last: 'Paolo',
         age: '36',
+    },
+    {
+        name: 'Lucia',
+        last: 'Luciana',
+        age: '11',
     }
 ]
 console.log(studentTable);
@@ -39,9 +44,12 @@ for (let i = 0; i < studentTable.length; i++) {
     appendTable(currentMember);
 }
 
+const filterElement = document.getElementById('filter');
+filter.addEventListener('click', filtra);
+
+
 
 //FUNCTIONS
-
 
 //append table
 
@@ -60,7 +68,8 @@ function appendTable(member) {
 }
 
 const form = document.getElementById('add-form');
-form.addEventListener('submit', addMember);
+form.addEventListener('submit', addMember, svuota);
+
 
 
 
@@ -86,4 +95,18 @@ function addMember(e) {
 
     appendTable(newMember);
     
+}
+
+
+//svuota form
+
+function svuota() {
+    const reset = document.getElementById('add-form').reset();
+}
+
+// filtra 
+
+function filtra (studentTable, member) {
+    const people = studentTable.filter(studentTable => studentTable.age >= 18);
+    console.log(people);
 }
