@@ -37,7 +37,6 @@ for (let i = 0; i < studentTable.length; i++) {
     //     `
     console.log(currentMember);
     appendTable(currentMember);
-    //tableElement.innerHTML += trString;
 }
 
 
@@ -58,4 +57,33 @@ function appendTable(member) {
         `
 
         tableElement.innerHTML += trString;
+}
+
+const form = document.getElementById('add-form');
+form.addEventListener('submit', addMember);
+
+
+
+// add member
+
+function addMember(e) {
+    e.preventDefault()
+    const name = document.getElementById('name').value // string
+    const last = document.getElementById('last').value // string
+    const age = document.getElementById('age').value // string
+    
+    const newMember = {
+        name : name,
+        last : last,
+        age : age,
+    }
+
+    console.log(newMember)
+    
+    studentTable.push(newMember)
+
+    console.log(studentTable)
+
+    appendTable(newMember);
+    
 }
