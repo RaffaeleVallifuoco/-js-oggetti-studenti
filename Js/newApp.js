@@ -43,9 +43,10 @@ for (let i = 0; i < studentTable.length; i++) {
     console.log(currentMember);
     appendTable(currentMember);
 }
-
+console.log(studentTable);
 const filterElement = document.getElementById('filter');
 filter.addEventListener('click', filtra);
+filtra (studentTable);
 
 
 
@@ -106,7 +107,7 @@ function svuota() {
 
 // filtra 
 
-function filtra (studentTable, member) {
+function filtra (studentTables) {
     const people = studentTable.filter(studentTable => studentTable.age >= 18);
     console.log(people);
 }
