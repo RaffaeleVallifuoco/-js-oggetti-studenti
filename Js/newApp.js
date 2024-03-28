@@ -2,6 +2,10 @@ console.log('OURSTUDENTS');
 
 //GLOBAL VAR
 
+const tableElement = document.getElementById('usersTable');
+const filterTableElement = document.getElementById('filter-table');
+
+
 //MAIN
 const studentTable = [
     {
@@ -46,7 +50,7 @@ for (let i = 0; i < studentTable.length; i++) {
 console.log(studentTable);
 const filterElement = document.getElementById('filter');
 filter.addEventListener('click', filtra);
-filtra (studentTable);
+//filtra (studentTable);
 
 
 
@@ -56,20 +60,19 @@ filtra (studentTable);
 
 function appendTable(member) {
 
-    const tableElement = document.getElementById('usersTable')
     const trString = `
-        < tr >
+        <tr>
             <td>${member.name}</td>
             <td>${member.last}</td>
             <td>${member.age}</td>
-        </tr >
+        </tr>
         `
 
         tableElement.innerHTML += trString;
 }
 
 const form = document.getElementById('add-form');
-form.addEventListener('submit', addMember, svuota);
+form.addEventListener('submit', addMember);
 
 
 
@@ -78,9 +81,9 @@ form.addEventListener('submit', addMember, svuota);
 
 function addMember(e) {
     e.preventDefault()
-    const name = document.getElementById('name').value // string
-    const last = document.getElementById('last').value // string
-    const age = document.getElementById('age').value // string
+    const name = document.getElementById('name').value;
+    const last = document.getElementById('last').value;
+    const age = document.getElementById('age').value; 
     
     const newMember = {
         name : name,
@@ -95,7 +98,7 @@ function addMember(e) {
     console.log(studentTable)
 
     appendTable(newMember);
-    
+    svuota();
 }
 
 
@@ -107,7 +110,22 @@ function svuota() {
 
 // filtra 
 
-function filtra (studentTables) {
+function filtra (member) {
     const people = studentTable.filter(studentTable => studentTable.age >= 18);
     console.log(people);
+    for (let i = 0; i < people.length; i++) {
+        const filterPeople = people[i];
+        const trFilterString = `
+        <tr>
+            <td>${filterPeople.name}</td>
+            <td>${filterPeople.last}</td>
+            <td>${filterPeople.age}</td>
+        </tr>
+        `
+
+        filterTableElement.innerHTML += trFilterString;
+    
+    
+        
+    }
 }
