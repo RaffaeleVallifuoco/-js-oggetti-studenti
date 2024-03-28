@@ -45,20 +45,20 @@ for (let i = 0; i < studentTable.length; i++) {
         
     //     `
     console.log(currentMember);
-    appendTable(currentMember);
+    appendTable(currentMember, tableElement);
 }
 console.log(studentTable);
 const filterElement = document.getElementById('filter');
-filter.addEventListener('click', filtra);
+filterElement.addEventListener('click', filtra);
 //filtra (studentTable);
-
+console.log(window);
 
 
 //FUNCTIONS
 
 //append table
 
-function appendTable(member) {
+function appendTable(member, tableBody) {
 
     const trString = `
         <tr>
@@ -68,7 +68,7 @@ function appendTable(member) {
         </tr>
         `
 
-        tableElement.innerHTML += trString;
+        tableBody.innerHTML += trString;
 }
 
 const form = document.getElementById('add-form');
@@ -110,20 +110,14 @@ function svuota() {
 
 // filtra 
 
-function filtra (member) {
+function filtra () {
     let people = studentTable.filter(studentTable => studentTable.age >= 18);
     console.log(people);
+    filterTableElement.innerHTML = '';
     for (let i = 0; i < people.length; i++) {
         const filterPeople = people[i];
-        const trFilterString = `
-        <tr>
-            <td>${filterPeople.name}</td>
-            <td>${filterPeople.last}</td>
-            <td>${filterPeople.age}</td>
-        </tr>
-        `
-
-        filterTableElement.innerHTML += trFilterString;
+        appendTable(filterPeople, filterTableElement);
+ 
     
     
         
