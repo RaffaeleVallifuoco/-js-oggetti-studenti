@@ -111,7 +111,7 @@ function svuota() {
 // filtra 
 
 function filtra (member) {
-    const people = studentTable.filter(studentTable => studentTable.age >= 18);
+    let people = studentTable.filter(studentTable => studentTable.age >= 18);
     console.log(people);
     for (let i = 0; i < people.length; i++) {
         const filterPeople = people[i];
