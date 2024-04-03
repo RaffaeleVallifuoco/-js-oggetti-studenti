@@ -58,7 +58,7 @@ console.log(window);
 
 //append table
 
-function appendTable(member, tableBody) {
+function appendTable(member, tabBody) {
 
     const trString = `
         <tr>
@@ -68,7 +68,7 @@ function appendTable(member, tableBody) {
         </tr>
         `
 
-        tableBody.innerHTML += trString;
+        tabBody.innerHTML += trString;
 }
 
 const form = document.getElementById('add-form');
@@ -97,7 +97,7 @@ function addMember(e) {
 
     console.log(studentTable)
 
-    appendTable(newMember);
+    appendTable(newMember, tableElement);
     svuota();
 }
 
